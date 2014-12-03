@@ -9,6 +9,8 @@ gem 'pg'
 #use devise for login
 gem 'devise'
 
+gem 'angularjs-rails'
+
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
