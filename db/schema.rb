@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202094116) do
+ActiveRecord::Schema.define(version: 20141203065320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "babies", force: true do |t|
+    t.string   "name"
+    t.date     "birthday"
+    t.string   "gender"
+    t.integer  "weight"
+    t.integer  "length"
+    t.string   "profile_pic"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "letters", force: true do |t|
+    t.text     "entry"
+    t.date     "pub_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
