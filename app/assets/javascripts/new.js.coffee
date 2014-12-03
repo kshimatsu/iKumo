@@ -9,4 +9,8 @@ App.controller("loginRegisterController", ["$scope", "$http", "$timeout", ($scop
 
   $scope.changeToRegister = ->
     $scope.hide_login = false
+
+  $scope.changeToLogin = ->
+    console.log "something"
+    $scope.hide_login = true
 ])
