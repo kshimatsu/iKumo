@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @baby.name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @baby.birthday %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @baby.length %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @baby.weight %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @baby.gender %>
+</p>
+
+<p>
+  <strong>Profile pic:</strong>
+  <%= @baby.profile_pic %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @baby.string %>
+</p>
+
+<%= link_to 'Edit', edit_baby_path(@baby) %> |
+<%= link_to 'Back', babies_path %>

@@ -1,0 +1,35 @@
+<h1>Listing babies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Length</th>
+      <th>Weight</th>
+      <th>Gender</th>
+      <th>Profile pic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @babies.each do |baby| %>
+      <tr>
+        <td><%= baby.name %></td>
+        <td><%= baby.birthday %></td>
+        <td><%= baby.length %></td>
+        <td><%= baby.weight %></td>
+        <td><%= baby.gender %></td>
+        <td><%= baby.profile_pic %></td>
+        <td><%= link_to 'Show', baby %></td>
+        <td><%= link_to 'Edit', edit_baby_path(baby) %></td>
+        <td><%= link_to 'Destroy', baby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Baby', new_baby_path %>
