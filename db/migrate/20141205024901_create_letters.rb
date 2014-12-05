@@ -1,8 +1,9 @@
 class CreateLetters < ActiveRecord::Migration
   def change
     create_table :letters do |t|
-      t.text :entry
-      t.date :pub_date
+      t.string :title
+      t.text :content
+      t.date :date
 
       t.timestamps
     end

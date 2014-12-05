@@ -23,7 +23,7 @@ class BabiesController < ApplicationController
   def create
     @baby = Baby.new(baby_params)
     @baby.save
-    respond_with(@baby)
+    redirect_to new_letter_path
   end
 
   def update
