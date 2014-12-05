@@ -9,6 +9,8 @@ gem 'pg'
 #use devise for login
 gem 'devise'
 
+gem 'carrierwave'
+
 gem 'angularjs-rails'
 
 gem 'sass-rails', '~> 4.0.3'

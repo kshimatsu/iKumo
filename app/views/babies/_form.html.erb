@@ -1,4 +1,4 @@
-<%= form_for(@baby) do |f| %>
+<%= form_for @baby, :html => {:multipart => true} do |f| %>
   <% if @baby.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@baby.errors.count, "error") %> prohibited this baby from being saved:</h2>
@@ -13,6 +13,20 @@
 
   <h1>Congratulations!</h1>
   <p>Please take a moment to create your baby's birth accouncement.  Don't worry, if there's anything unconfirmed, you can always come back and edit this.</p>
+
+    <p>
+      <label>My Avatar</label>
+      <%= image_tag(@baby.avatar_url) if @baby.avatar? %>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    </p>
+
+    <p>
+    <label>
+      <%= f.check_box :remove_avatar %>
+      Remove avatar
+    </label>
+  </p>
 
   <div class="field">
     <%= f.label :name %><br>
@@ -36,10 +50,6 @@
     <%= radio_button :baby, :gender, :girl %>Girl
     <%= radio_button :baby, :gender, :surprise %>Surprise!
 
-  </div>
-  <div class="field">
-    <%= f.label :profile_pic %><br>
-    <%= f.text_field :profile_pic %>
   </div>
   <div class="actions">
     <%= f.submit %>
