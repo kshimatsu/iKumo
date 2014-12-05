@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <h1>Congratulations!</h1>
+  <p>Please take a moment to create your baby's birth accouncement.  Don't worry, if there's anything unconfirmed, you can always come back and edit this.</p>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -21,15 +24,18 @@
   </div>
   <div class="field">
     <%= f.label :length %><br>
-    <%= f.number_field :length %>
+    <%= f.number_field :length %>cm
   </div>
   <div class="field">
     <%= f.label :weight %><br>
-    <%= f.number_field :weight %>
+    <%= f.number_field :weight %>kg
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <p>It's a:</p>
+    <%= radio_button :baby, :gender, :boy %>Boy
+    <%= radio_button :baby, :gender, :girl %>Girl
+    <%= radio_button :baby, :gender, :surprise %>Surprise!
+
   </div>
   <div class="field">
     <%= f.label :profile_pic %><br>
