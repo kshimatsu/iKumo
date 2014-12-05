@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :letters
+
   resources :babies
 
   root 'welcome#index'
