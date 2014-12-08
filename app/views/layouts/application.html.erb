@@ -3,14 +3,20 @@
 <head>
   <title>iKumo</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.min.css" rel="stylesheet">
+    <link href="">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.min.css" rel="stylesheet">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
 </head>
 <body ng-app="iKumo">
   <div class="navbar navbar-default">
@@ -53,7 +59,21 @@
 
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          $.material.init();
+          $.material.ripples();
+          $.material.input();
+          $.material.checkbox();
+          $.material.radio();
+      });
+  </script>
 </body>
 </html>
