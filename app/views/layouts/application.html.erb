@@ -3,17 +3,14 @@
 <head>
   <title>iKumo</title>
   <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.min.css" rel="stylesheet">
-    <link href="">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.min.css" rel="stylesheet">
 
-
-
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.css"%>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.min.css"%>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.min.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -59,21 +56,13 @@
 
 
 <!-- Latest compiled and minified JavaScript -->
-  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js"></script>
-  <script>
-      $(document).ready(function() {
-          $.material.init();
-          $.material.ripples();
-          $.material.input();
-          $.material.checkbox();
-          $.material.radio();
-      });
-  </script>
+  <%= javascript_include_tag "//code.jquery.com/jquery-1.10.2.min.js" %>
+  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js" %>
+
 </body>
 </html>
