@@ -4,6 +4,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
   process :convert => 'png'
+  process :resize_to_limit => [200, 200]
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
