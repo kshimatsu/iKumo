@@ -3,14 +3,16 @@
 <head>
   <title>iKumo</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.css"%>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.min.css"%>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.min.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.css" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.min.css" %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
 </head>
 <body ng-app="iKumo">
   <div class="navbar navbar-default">
@@ -23,13 +25,17 @@
       <a class="navbar-brand" href="/">iKumo</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
+
       <ul class="nav navbar-nav">
+      <% if user_signed_in? %>
         <li class="active"><a href="/">Home</a></li>
+      <% end %>
       </ul>
       <form class="navbar-form navbar-left">
-        <input type="text" class="form-control col-lg-8" placeholder="Search through letters">
+        <% if user_signed_in? %><input type="text" class="form-control col-lg-8" placeholder="Search through letters"><% end %>
       </form>
       <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
         <li><a href="/letters/new">Write a Letter</a></li>
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
@@ -38,9 +44,10 @@
             <li><a href="javascript:void(0)">Baby 2</a></li>
             <li><a href="/users/edit">Account Settings</a></li>
             <li class="divider"></li>
-            <li><a href="javascript:void(0)">Logout</a></li>
+            <li><%= link_to "Log Out",  destroy_user_session_path, :method => :delete %></li>
           </ul>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -49,11 +56,15 @@
 <%= yield %>
 
 
-
-
-
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "//code.jquery.com/jquery-1.10.2.min.js" %>
+  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js" %>
 
 </body>
 </html>
