@@ -14,8 +14,9 @@
   </thead>
 
   <tbody>
-    <% @babies.each do |baby| %>
+    <% @my_babies.each do |baby| %>
       <tr>
+        <td><%= image_tag baby.avatar_url, {:class => "avatar"} %></td>
         <td><%= baby.name %></td>
         <td><%= baby.birthday %></td>
         <td><%= baby.length %></td>
