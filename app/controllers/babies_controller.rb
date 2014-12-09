@@ -10,6 +10,7 @@ class BabiesController < ApplicationController
   end
 
   def show
+    @letters = @baby.letters
     respond_with(@baby)
   end
 
@@ -39,10 +40,10 @@ class BabiesController < ApplicationController
 
   private
     def set_baby
-      @baby = Baby.find(params[:id])
+      @baby = current_user.babies.find(params[:id]) if current_user
     end
 
     def baby_params
-      params.require(:baby).permit(:name, :birthday, :length, :weight, :gender, :avatar, :letter_ids => [])
+      params.require(:baby).permit(:name, :birthday, :length, :weight, :gender, :avatar, :letter_id)
     end
 end

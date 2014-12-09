@@ -27,6 +27,10 @@
   <%= @baby.gender %>
 </p>
 
+ <% @letters.each do |letter| %>
+  <%= letter.title %>
+ <% end %>
+
 
 <%= link_to 'Edit', edit_baby_path(@baby) %> |
 <%= link_to 'Back', babies_path %>
