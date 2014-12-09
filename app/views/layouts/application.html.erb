@@ -34,8 +34,10 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="javascript:void(0)">Baby 1</a></li>
-            <li><a href="javascript:void(0)">Baby 2</a></li>
+            <% Baby.all.each do |baby| %>
+             <li><%= link_to baby.name, baby %></li>
+            <% end %>
+            <li><a href="/babies/all"><span class="glyphicons glyphicons-child" aria-hidden="true"></span>All Babies</a></li>
             <li><a href="/users/edit">Account Settings</a></li>
             <li class="divider"></li>
             <li><a href="javascript:void(0)">Logout</a></li>
