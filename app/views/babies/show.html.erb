@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @baby.avatar_url, {:class => "avatar"} %>
+
 <p>
   <strong>Name:</strong>
   <%= @baby.name %>
@@ -23,11 +25,6 @@
 <p>
   <strong>Gender:</strong>
   <%= @baby.gender %>
-</p>
-
-<p>
-  <strong>Profile pic:</strong>
-  <%= @baby.profile_pic %>
 </p>
 
 
