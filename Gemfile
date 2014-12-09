@@ -9,7 +9,11 @@ gem 'pg'
 #use devise for login
 gem 'devise'
 
+gem 'carrierwave'
+
 gem 'angularjs-rails'
+
+gem 'rmagick', :require => 'RMagick'
 
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
