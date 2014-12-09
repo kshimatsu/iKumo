@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141205024901) do
     t.string   "title"
     t.text     "content"
     t.date     "date"
+    t.integer  "baby_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

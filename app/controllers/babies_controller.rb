@@ -5,6 +5,7 @@ class BabiesController < ApplicationController
 
   def index
     @babies = Baby.all
+    @letters = Letter.all
     respond_with(@babies)
   end
 
@@ -42,6 +43,6 @@ class BabiesController < ApplicationController
     end
 
     def baby_params
-      params.require(:baby).permit(:name, :birthday, :length, :weight, :gender, :profile_pic)
+      params.require(:baby).permit(:name, :birthday, :length, :weight, :gender, :profile_pic, :letter_ids => [])
     end
 end

@@ -23,6 +23,12 @@
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
+
+  <div class="field">
+    <%= f.label :baby %><br>
+    <%= f.collection_select :baby_id, Baby.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
