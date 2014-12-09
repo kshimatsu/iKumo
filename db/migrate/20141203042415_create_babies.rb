@@ -6,8 +6,6 @@ class CreateBabies < ActiveRecord::Migration
       t.string :gender
       t.integer :weight
       t.integer :length
-
-
       t.timestamps
     end
   end
