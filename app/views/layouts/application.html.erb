@@ -12,7 +12,6 @@
     <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.css" %>
     <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
 </head>
 <body ng-app="iKumo">
@@ -58,6 +57,7 @@
 
 
 <!-- Latest compiled and minified JavaScript -->
+  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag "//code.jquery.com/jquery-1.10.2.min.js" %>
   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
   <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.js" %>
