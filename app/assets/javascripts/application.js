@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require angular
 //= require_tree .
+
+$(document).ready(function() {
+  $.material.init();
+  $.material.ripples();
+  $.material.input();
+  $.material.checkbox();
+  $.material.radio();
+});
