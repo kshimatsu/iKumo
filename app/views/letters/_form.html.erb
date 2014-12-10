@@ -26,7 +26,7 @@
 
   <div class="field">
     <%= f.label :baby %><br>
-    <%= f.collection_select :baby_id, Baby.all, :id, :name %>
+    <%= f.collection_select :baby_id, @my_babies, :id, :name %>
   </div>
 
   <div class="actions">

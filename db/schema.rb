@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20141209094357) do
     t.string   "gender"
     t.integer  "weight"
     t.integer  "length"
-    t.string   "profile_pic"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
