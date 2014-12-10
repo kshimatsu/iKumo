@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :babies
 
-  root 'welcome#index'
+  root 'babies#index'
 
   devise_for :users, controllers: {registrations: 'users/registrations'}
 
