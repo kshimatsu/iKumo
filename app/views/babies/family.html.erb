@@ -1,0 +1,11 @@
+<h1>My Family</h1>
+
+<div class="row">
+
+  <% @babies.each do |baby| %>
+    <%= render partial: 'baby_card', locals: {my_baby: baby} %>
+  <% end %>
+
+</div>
+
+<%= link_to 'New Baby', new_baby_path %>

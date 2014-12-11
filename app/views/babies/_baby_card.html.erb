@@ -1,0 +1,18 @@
+<div class="profile-container col-xs-12 col-sm-6">
+  <div class="baby-container">
+    <%= link_to my_baby do %>
+      <%= image_tag my_baby.avatar_url, {:class => "avatar"} %>
+    <% end %>
+
+    <div class="profile-details-container">
+      <h2><%= my_baby.name %></h2>
+
+      <p>Birthday: <%= my_baby.birthday %></p>
+      <p>Birth length: <%= my_baby.length %></p>
+      <p>Birth weight: <%= my_baby.weight %></p>
+      <p>Gender: <%= my_baby.gender %></p>
+
+      <p><%= link_to 'Edit', edit_baby_path(my_baby) %> | <%= link_to 'Remove', my_baby, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  </div>
+</div>

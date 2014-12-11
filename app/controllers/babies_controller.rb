@@ -1,12 +1,10 @@
 class BabiesController < ApplicationController
   before_action :set_baby, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
-  def index
-    @babies = Baby.all
-    @letters = Letter.all
-    respond_with(@babies)
+  def family
+    @babies = current_user.babies if current_user
   end
 
   def show
