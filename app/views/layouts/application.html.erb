@@ -40,7 +40,7 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <% Baby.all.each do |baby| %>
+            <% @my_babies.each do |baby| %>
               <li><%= link_to baby.name, baby %></li>
             <% end %>
             <li><a href="/babies"><span class="glyphicons glyphicons-child" aria-hidden="true"></span>All Babies</a></li>
@@ -54,9 +54,17 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-offset-2">
+      <div class="row">
+        <div class="col-xs-12">
 
-<%= yield %>
+          <%= yield %>
 
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- Latest compiled and minified JavaScript -->
   <%= javascript_include_tag 'application' %>

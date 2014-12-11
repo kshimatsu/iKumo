@@ -4,6 +4,7 @@ class CreateLetters < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.date :date
+      t.belongs_to :baby
 
       t.timestamps
     end

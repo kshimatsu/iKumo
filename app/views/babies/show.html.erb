@@ -1,4 +1,7 @@
+<h1> TIMELINE GOES HERE </h1>
+
 <p id="notice"><%= notice %></p>
+
 
 <%= image_tag @baby.avatar_url, {:class => "avatar"} %>
 
@@ -26,6 +29,10 @@
   <strong>Gender:</strong>
   <%= @baby.gender %>
 </p>
+
+ <% @letters.each do |letter| %>
+  <%= letter.title %>
+ <% end %>
 
 
 <%= link_to 'Edit', edit_baby_path(@baby) %> |

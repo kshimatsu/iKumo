@@ -5,10 +5,12 @@ class BabiesController < ApplicationController
 
   def index
     @babies = Baby.all
+    @letters = Letter.all
     respond_with(@babies)
   end
 
   def show
+    @letters = @baby.letters
     respond_with(@baby)
   end
 
@@ -22,6 +24,7 @@ class BabiesController < ApplicationController
 
   def create
     @baby = Baby.new(baby_params)
+    @baby.user_id = current_user.id if current_user
     @baby.save
     redirect_to new_letter_path
   end
@@ -38,10 +41,10 @@ class BabiesController < ApplicationController
 
   private
     def set_baby
-      @baby = Baby.find(params[:id])
+      @baby = current_user.babies.find(params[:id]) if current_user
     end
 
     def baby_params
-      params.require(:baby).permit(:name, :birthday, :length, :weight, :gender, :avatar)
+      params.require(:baby).permit(:name, :birthday, :length, :weight, :gender, :avatar, :letter_id, :user_id)
     end
 end
