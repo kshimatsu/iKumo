@@ -1,6 +1,6 @@
 <div class="profile-container col-xs-12 col-sm-6">
   <div class="baby-container">
-    <%= link_to my_baby do %>
+    <%= link_to timeline_baby_path(my_baby) do %>
       <%= image_tag my_baby.avatar_url, {:class => "avatar"} %>
     <% end %>
 

@@ -1,10 +1,15 @@
 class BabiesController < ApplicationController
-  before_action :set_baby, only: [:show, :edit, :update, :destroy]
+  before_action :set_baby, only: [:show, :edit, :update, :destroy, :timeline]
 
   respond_to :html, :json
 
   def family
     @babies = current_user.babies if current_user
+  end
+
+  def timeline
+    @letters = @baby.letters
+    respond_with(@baby)
   end
 
   def show
