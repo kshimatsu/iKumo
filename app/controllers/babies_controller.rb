@@ -1,6 +1,5 @@
 class BabiesController < ApplicationController
   before_action :set_baby, only: [:show, :edit, :update, :destroy, :timeline]
-
   respond_to :html, :json
 
   def family
