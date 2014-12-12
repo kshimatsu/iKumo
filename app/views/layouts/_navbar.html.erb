@@ -27,10 +27,10 @@
           <ul class="dropdown-menu">
 
             <% @my_babies.each do |baby| %>
-              <li><%= link_to baby.name, baby %></li>
+              <li><%= link_to baby.name, timeline_baby_path(baby) %></li>
             <% end %>
             <li>
-              <%= link_to 'family' do %>
+              <%= link_to '/family' do %>
                 <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
                 All Babies
               <% end %>
