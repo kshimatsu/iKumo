@@ -1,0 +1,76 @@
+<h1> TIMELINE GOES HERE </h1>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="timeline-avatar col-xs-12 col-md-4 col-md-offset-4">
+  <%= image_tag @baby.avatar_url, {:class => "avatar center-block img-responsive"} %>
+  </div>
+
+  <div class="new-letter col-xs-12 col-md-8 col-md-offset-2">
+
+<%= form_for @letter do |f| %>
+
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <span="field">
+      <%= f.date_select :date %>
+    </span>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  </div>
+
+
+
+
+  <div class="row">
+    <% @letters.order('created_at DESC').each do |letter| %>
+      <div class="letter col-xs-12 col-md-8 col-md-offset-2">
+        <h3><%= letter.title %></h3>
+        <p><%= letter.content %></p>
+        <p><%= letter.created_at %></p>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="birth-announcement col-xs-12 col-md-8 col-md-offset-2">
+        <p>
+          <strong>Name:</strong>
+          <%= @baby.name %>
+        </p>
+
+        <p>
+          <strong>Birthday:</strong>
+          <%= @baby.birthday %>
+        </p>
+
+        <p>
+          <strong>Length:</strong>
+          <%= @baby.length %>
+        </p>
+
+        <p>
+          <strong>Weight:</strong>
+          <%= @baby.weight %>
+        </p>
+
+        <p>
+          <strong>Gender:</strong>
+          <%= @baby.gender %>
+        </p>
+        <%= link_to 'Edit', edit_baby_path(@baby) %> |
+        <%= link_to 'Back', babies_path %>
+      </div>
+    </div>
+  </div>
+</div>
