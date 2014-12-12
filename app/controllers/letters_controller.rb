@@ -24,7 +24,7 @@ class LettersController < ApplicationController
   def create
     @letter = Letter.new(letter_params)
     @letter.save
-    redirect_to root_path
+    redirect_to :back
   end
 
   def update
