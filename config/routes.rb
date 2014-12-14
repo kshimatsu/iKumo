@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :letters
 
+  resources :photos
+
 
   get 'family' => 'babies#family'
 

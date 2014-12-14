@@ -23,7 +23,7 @@ class LettersController < ApplicationController
   def create
     @letter = Letter.new(letter_params)
     @letter.save
-    redirect_to :back
+    redirect_to timeline_baby_url(@letter.baby_id)
   end
 
   def update

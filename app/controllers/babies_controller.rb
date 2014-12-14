@@ -9,6 +9,9 @@ class BabiesController < ApplicationController
   def timeline
     @letters = @baby.letters
     @letter = Letter.new
+    @photos = @baby.photos
+    @photo = Photo.new
+    @photo.baby = @baby
     respond_with(@baby)
   end
 
