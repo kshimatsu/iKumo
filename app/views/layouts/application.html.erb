@@ -15,15 +15,18 @@
 
   <%= render 'layouts/navbar' %>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <%= yield %>
+      </div>
     </div>
   </div>
 
 <!-- Latest compiled and minified JavaScript -->
   <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag "//code.jquery.com/jquery-1.10.2.min.js" %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
   <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.min.js" %>
   <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js" %>

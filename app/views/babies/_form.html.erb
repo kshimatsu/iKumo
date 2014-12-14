@@ -1,4 +1,5 @@
-<%= form_for @baby, :html => {:multipart => true} do |f| %>
+
+<%= form_for @baby, :html => {:multipart => true, :class => "form-horizontal horizontal"} do |f| %>
   <% if @baby.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@baby.errors.count, "error") %> prohibited this baby from being saved:</h2>
@@ -11,47 +12,75 @@
     </div>
   <% end %>
 
-  <h1>Congratulations!</h1>
-  <p>Please take a moment to create your baby's birth accouncement.  Don't worry, if there's anything unconfirmed, you can always come back and edit this.</p>
-
-    <p>
-      <label>My Avatar</label>
+  <div class="form-group">
+    <label for="uploadAvatar" class="col-xs-3 control-label">Avatar:</label>
+    <div class="col-xs-9">
       <%= image_tag(@baby.avatar_url) if @baby.avatar? %>
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
-    </p>
+    </div>
 
-    <p>
-    <label>
-      <%= f.check_box :remove_avatar %>
-      Remove avatar
-    </label>
-  </p>
+    <div class="col-xs-9">
+      <div class="checkbox">
+        <label>
+      <%= f.check_box :remove_avatar, :class => "checkbox" %> Remove Avatar
+        </label>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <label for="inputName" class="col-xs-3 control-label">Name:</label>
+    <div class="col-xs-9">
+    <%= f.text_field :name, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
-  </div>
-  <div class="field">
-    <%= f.label :length %><br>
-    <%= f.number_field :length %>cm
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.number_field :weight %>kg
-  </div>
-  <div class="field">
-    <p>It's a:</p>
-    <%= radio_button :baby, :gender, :boy %>Boy
-    <%= radio_button :baby, :gender, :girl %>Girl
-    <%= radio_button :baby, :gender, :surprise %>Surprise!
 
+  <div class="form-group">
+    <label for="inputBirthday" class="col-xs-3 control-label">Birthday:</label>
+    <div class="col-xs-9">
+    <%= f.date_select :birthday, :class => "control-label", :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year'} %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <label for="inputLength" class="col-xs-3 control-label">Length (cm):</label>
+    <div class="col-xs-9">
+    <%= f.number_field :length, :class =>"form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputWeight" class="col-xs-3 control-label">Weight (kg):</label>
+    <div class="col-xs-9">
+    <%= f.number_field :weight, :class =>"form-control"%>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-xs-3 control-label">It's':</label>
+    <div class="col-xs-9">
+      <div class="radio radio-primary">
+        <label>
+    <%= radio_button :baby, :gender, :boy, :class => "radio radio-primary"%>Boy
+        </label>
+      </div>
+      <div class="radio radio-primary">
+        <label>
+    <%= radio_button :baby, :gender, :girl, :class => "radio radio-primary" %>Girl
+        </label>
+      </div>
+      <div class="radio radio-primary">
+        <label>
+    <%= radio_button :baby, :gender, :surprise, :class => "radio radio-primary" %>Surprise!
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-xs-9 col-lg-offset-4">
+    <%= f.submit "HOORAY", :class=>"btn btn-primary"%>
+    </div>
   </div>
 <% end %>

@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   get 'family' => 'babies#family'
 
-  root 'babies#index'
+  root 'babies#family'
 end
