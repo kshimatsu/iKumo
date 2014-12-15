@@ -22,7 +22,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @photo.baby_id = photo_params[:baby_id].to_i
+    @photo.baby = current_user.babies.find(photo_params[:baby_id])
     @photo.save
     redirect_to timeline_baby_url(@photo.baby_id)
   end
