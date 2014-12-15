@@ -46,8 +46,8 @@
 
   <div class="row">
     <% @baby.photos.each do |image| %>
-      <div class="col-md-6">
-        <%= image_tag image.image_url %>
+      <div class="image col-md-4">
+        <%= image_tag image.image_url(:thumb).to_s %>
       </div>
     <% end %>
   </div>
