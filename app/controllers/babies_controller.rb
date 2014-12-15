@@ -1,6 +1,5 @@
 class BabiesController < ApplicationController
   before_action :set_baby, only: [:show, :edit, :update, :destroy, :timeline]
-
   respond_to :html, :json
 
   def family
@@ -9,6 +8,10 @@ class BabiesController < ApplicationController
 
   def timeline
     @letters = @baby.letters
+    @letter = Letter.new
+    @photos = @baby.photos
+    @photo = Photo.new
+    @photo.baby = @baby
     respond_with(@baby)
   end
 
@@ -29,7 +32,7 @@ class BabiesController < ApplicationController
     @baby = Baby.new(baby_params)
     @baby.user_id = current_user.id if current_user
     @baby.save
-    redirect_to new_letter_path
+    redirect_to timeline_baby_path(@baby)
   end
 
   def update
