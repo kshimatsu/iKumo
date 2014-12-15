@@ -25,7 +25,7 @@
 
   <div class="row">
   <!-- Letter Form -->
-  <div class="letter-form">
+  <div class="letter-form col-xs-12 col-md-6 col-md-offset-3">
     <%= form_for @letter do |f| %>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -60,44 +60,36 @@
         <p><%= letter.created_at %></p>
       </div>
     <% end %>
+  </div>
 
-    <div class="row">
-      <div class="birth-announcement col-xs-12 col-md-8 col-md-offset-2">
-        <p>
-          <strong>Name:</strong>
-          <%= @baby.name %>
-        </p>
+  <div class="row">
+    <div class="birth-announcement col-xs-12 col-md-8 col-md-offset-2">
+      <p>
+        <strong>Name:</strong>
+        <%= @baby.name %>
+      </p>
 
-        <p>
-          <strong>Birthday:</strong>
-          <%= @baby.birthday %>
-        </p>
+      <p>
+        <strong>Birthday:</strong>
+        <%= @baby.birthday %>
+      </p>
 
-        <p>
-          <strong>Length:</strong>
-          <%= @baby.length %>
-        </p>
+      <p>
+        <strong>Length:</strong>
+        <%= @baby.length %>
+      </p>
 
-        <p>
-          <strong>Weight:</strong>
-          <%= @baby.weight %>
-        </p>
+      <p>
+        <strong>Weight:</strong>
+        <%= @baby.weight %>
+      </p>
 
-        <p>
-          <strong>Gender:</strong>
-          <%= @baby.gender %>
-        </p>
-        <%= link_to 'Edit', edit_baby_path(@baby) %> |
-        <%= link_to 'Back', babies_path %>
-      </div>
-    </div>
-
-    <div class="row">
-      <% @baby.photos.each do |image| %>
-        <div class="col-md-6">
-          <%= image_tag image.image_url %>
-        </div>
-      <% end %>
+      <p>
+        <strong>Gender:</strong>
+        <%= @baby.gender %>
+      </p>
+      <%= link_to 'Edit', edit_baby_path(@baby) %>
     </div>
   </div>
 </div>
+
