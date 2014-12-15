@@ -32,7 +32,7 @@ class BabiesController < ApplicationController
     @baby = Baby.new(baby_params)
     @baby.user_id = current_user.id if current_user
     @baby.save
-    redirect_to new_letter_path
+    redirect_to timeline_baby_path(@baby)
   end
 
   def update
