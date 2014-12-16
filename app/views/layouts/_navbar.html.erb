@@ -1,49 +1,49 @@
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">iKumo</a>
-      </div>
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-
-        <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li class="active"><a href="/">Home</a></li>
-        <% end %>
-        </ul>
-
-        <form class="navbar-form navbar-left">
-          <% if user_signed_in? %><input type="text" class="form-control col-lg-8" placeholder="Search through letters"><% end %>
-        </form>
-
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li><a href="/letters/new">Write a Letter</a></li>
-          <li class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-
-              <% @my_babies.each do |baby| %>
-                <li><%= link_to baby.name, baby %></li>
-              <% end %>
-              <li>
-                <%= link_to '/family' do %>
-                  <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-                  All Babies
-                <% end %>
-              </li>
-              <li><a href="/users/edit">Account Settings</a></li>
-              <li class="divider"></li>
-              <li><%= link_to "Log Out",  destroy_user_session_path, :method => :delete %></li>
-
-            </ul>
-          </li>
-          <% end %>
-        </ul>
-      </div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">iKumo</a>
     </div>
-  </nav>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+      <% if user_signed_in? %>
+        <li class="active"><a href="/">Home</a></li>
+      <% end %>
+      </ul>
+
+      <form class="navbar-form navbar-left">
+        <% if user_signed_in? %><input type="text" class="form-control col-lg-8" placeholder="Search through letters"><% end %>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li><a href="/letters/new">Write a Letter</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+
+            <% @my_babies.each do |baby| %>
+              <li><%= link_to baby.name, baby %></li>
+            <% end %>
+            <li>
+              <%= link_to '/family' do %>
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                All Babies
+              <% end %>
+            </li>
+            <li><a href="/users/edit">Account Settings</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log Out",  destroy_user_session_path, :method => :delete %></li>
+
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

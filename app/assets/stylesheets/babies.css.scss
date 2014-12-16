@@ -33,17 +33,28 @@ h1 {
   margin: 20px 10px;
 }
 
-#announcementHead{
-  font-size: 30px;
-  text-align: center;
-}
-
-#announcementBody{
-  font-size: 16px;
-  text-align: center;
-}
-
 #new_baby_headline{
   margin-bottom: 20px;
   font-size: 24px;
+}
+
+.letter {
+  border: solid 2px;
+  border-color: grey;
+}
+
+.letter-buttons {
+  float: right
+}
+
+.image {
+  padding: 2px;
+}
+
+button.letter-buttons {
+  display: none; /* Hide button */
+}
+
+.divbutton:hover button {
+   display: block; /* On :hover of div show button */
 }

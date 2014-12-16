@@ -2,8 +2,16 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: 'users/registrations'}
 
+  resources :babies do
+    member do
+      get 'timeline'
+    end
+  end
+
   resources :letters
-  resources :babies
+
+  resources :photos
+
 
   get 'family' => 'babies#family'
 
