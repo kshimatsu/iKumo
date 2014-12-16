@@ -1,18 +1,65 @@
+
 <div class="profile-container col-xs-12 col-sm-6">
   <div class="baby-container">
+    <div class="well">
     <%= link_to timeline_baby_path(my_baby) do %>
       <%= image_tag my_baby.avatar_url, {:class => "avatar"} %>
     <% end %>
 
-    <div class="profile-details-container">
-      <h2><%= my_baby.name %></h2>
+      <div class="profile-details-container">
+          <h2><%= my_baby.name %></h2>
 
-      <p>Birthday: <%= my_baby.birthday %></p>
-      <p>Birth length: <%= my_baby.length %></p>
-      <p>Birth weight: <%= my_baby.weight %></p>
-      <p>Gender: <%= my_baby.gender %></p>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" style="width: 100%"></div>
+        </div>
 
-      <p><%= link_to 'Edit', edit_baby_path(my_baby) %> | <%= link_to 'Remove', my_baby, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <div class="row">
+            <div class="col-xs-6"><h4 class="baby_info">Birthday:</h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.birthday %><h4></div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6"><h4 class="baby_info">Birth Length:</h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.length %>CM<h4></div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6"><h4 class="baby_info">Birth Weight:</h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.weight %>KG<h4></div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6"><h4 class="baby_info">Gender:</h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.gender %><h4></div>
+          </div>
+
+        <p><%= link_to 'Edit', edit_baby_path(my_baby) %> | <%= link_to 'Remove', my_baby, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+        <div class="list-group">
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-image-photo"></i>
+                </div>
+                <div class="row-content">
+                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                    <h4 class="list-group-item-heading">NO. OF PHOTOS</h4>
+                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                </div>
+            </div>
+            <div class="list-group-separator"></div>
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-maps-local-post-office"></i>
+                </div>
+                <div class="row-content">
+                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                    <h4 class="list-group-item-heading">NO. OF LETTERS</h4>
+                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                </div>
+            </div>
+            <div class="list-group-separator"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
