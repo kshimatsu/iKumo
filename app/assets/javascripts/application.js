@@ -22,9 +22,6 @@ $(document).ready(function() {
   $.material.input();
   $.material.checkbox();
   $.material.radio();
-});
-
-$(document).ready(function(){
   $('input[type=file]').bootstrapFileInput();
   $('.file-inputs').bootstrapFileInput();
 });
