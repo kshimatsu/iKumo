@@ -12,8 +12,8 @@ class BabiesController < ApplicationController
     @photos = @baby.photos
 
     @timeline_media = @letters.to_a
-    @baby.photos.to_a.each { |p| @timeline_media << p }
-    @timeline_media.sort { |a,b| b.created_at <=> a.created_at }
+    @baby.photos.to_a.each { |photo| @timeline_media << photo }
+    @timeline_media.sort! { |a,b| b.created_at <=> a.created_at }
 
     @letter = Letter.new
     @photo = Photo.new

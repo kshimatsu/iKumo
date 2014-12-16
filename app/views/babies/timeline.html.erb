@@ -17,46 +17,50 @@
             </li>
           <!-- Image Uploader -->
             <div class="row">
-              <div class="photo-form col-xs-12 col-md-6 col-md-offset-3">
-                <%= form_for @photo do |f| %>
-                  <%= f.file_field :image %>
-                  <input id="photo_baby_id" name="photo[baby_id]" type="hidden" value="<%= @photo.baby_id %>">
-                  <p>
-                  <%= f.submit %>
-                  </p>
-                <% end %>
-              </div>
+              <form role="form">
+                <div class="form-group well col-xs-12 col-md-8 col-md-offset-2">
+                  <%= form_for @photo do |f| %>
+                    <%= f.file_field :image %>
+                    <input id="photo_baby_id" name="photo[baby_id]" type="hidden" value="<%= @photo.baby_id %>">
+
+                    <i class="mdi-editor-insert-photo"><%= f.submit 'Upload a Memory' %></i>
+
+                  <% end %>
+                </div>
+              </form>
             <!-- End image uploader -->
             </div>
 
             <div class="row">
             <!-- Letter Form -->
-              <div class="letter-form col-xs-12 col-md-6 col-md-offset-3">
+            <form role="form">
+              <div class="well col-xs-12 col-md-6 col-md-offset-3">
                 <%= form_for @letter do |f| %>
                   <%= f.label :title %><br>
                   <%= f.text_field :title %>
-                  <span class="field">
+                  <span class="">
                     <%= f.date_select :date %>
                   </span>
-                  <div class="field">
+                  <div class="form-control">
                     <%= f.label :content %><br>
                     <%= f.text_area :content %>
                   </div>
                   <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
-                  <div class="actions">
+                  <div class="submit">
                     <%= f.submit %>
                   </div>
                 <% end %>
               </div>
+              </form>
             </div>
             <!-- End Letter form -->
 
             <li class="time-label">
-                <span class="bg-light-blue"> Year 2014
+                <span class="bg-light-blue"> Year <%= Time.now.year %>
                 </span>
             </li>
 
-            <% @timeline_media.sort {|a,b| b.created_at <=> a.created_at}.each do |media| %>
+            <% @timeline_media.each do |media| %>
 
               <% if media.is_a? Photo %>
                 <li>
