@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @letter %> |
-<%= link_to 'Back', letters_path %>
+<%= link_to 'Back to Timeline', timeline_baby_path(@letter.baby_id) %>
+

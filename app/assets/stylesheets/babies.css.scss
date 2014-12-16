@@ -28,3 +28,19 @@ h1 {
   border-color: grey;
 }
 
+.letter-buttons {
+  float: right
+}
+
+.image {
+  padding: 2px;
+}
+
+button.letter-buttons {
+  display: none; /* Hide button */
+}
+
+.divbutton:hover button {
+   display: block; /* On :hover of div show button */
+}
+
