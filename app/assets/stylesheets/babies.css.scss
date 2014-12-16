@@ -5,6 +5,8 @@
 .avatar {
   border-radius: 50%;
   height: 200px;
+  border: 2px solid;
+  border-color: rgba(217,214,209, 1);
 }
 
 .form {
@@ -13,18 +15,32 @@
 
 h1 {
   text-align: center;
+  font-family: "sans-serif"
 }
 
 .baby-container {
   text-align: center;
   border-color: grey;
+  font-family: "helvetica";
   padding: 10px 10px 10px 10px;
   margin: 20px 10px;
+
+  #baby_card {
+    background-color: rgba(243,248,243,1);
+
+  }
+
+  #photo_count {
+    margin: 10px 0px 5px 0px;
+  }
 }
 
 .baby_info {
   text-align: left;
+  margin-left: 10px;
 }
+
+
 
 .letter {
   border: solid 2px;

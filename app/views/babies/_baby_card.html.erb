@@ -1,7 +1,7 @@
 
 <div class="profile-container col-xs-12 col-sm-6">
   <div class="baby-container">
-    <div class="well">
+    <div class="well" id="baby_card">
     <%= link_to timeline_baby_path(my_baby) do %>
       <%= image_tag my_baby.avatar_url, {:class => "avatar"} %>
     <% end %>
@@ -15,27 +15,25 @@
 
           <div class="row">
             <div class="col-xs-6"><h4 class="baby_info">Birthday:</h4></div>
-            <div class="col-xs-6"><h4><%= my_baby.birthday %><h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.birthday.strftime("%^b %d, %Y") %><h4></div>
           </div>
 
           <div class="row">
             <div class="col-xs-6"><h4 class="baby_info">Birth Length:</h4></div>
-            <div class="col-xs-6"><h4><%= my_baby.length %>CM<h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.length %> cm<h4></div>
           </div>
 
           <div class="row">
             <div class="col-xs-6"><h4 class="baby_info">Birth Weight:</h4></div>
-            <div class="col-xs-6"><h4><%= my_baby.weight %>KG<h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.weight %> kg<h4></div>
           </div>
 
           <div class="row">
             <div class="col-xs-6"><h4 class="baby_info">Gender:</h4></div>
-            <div class="col-xs-6"><h4><%= my_baby.gender %><h4></div>
+            <div class="col-xs-6"><h4><%= my_baby.gender.upcase %><h4></div>
           </div>
 
-        <p><%= link_to 'Edit', edit_baby_path(my_baby) %> | <%= link_to 'Remove', my_baby, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-
-        <div class="list-group">
+        <div class="list-group" id="photo_count">
             <div class="list-group-item">
                 <div class="row-action-primary">
                     <i class="mdi-image-photo"></i>
@@ -43,7 +41,7 @@
                 <div class="row-content">
                     <div class="action-secondary"><i class="mdi-material-info"></i></div>
                     <h4 class="list-group-item-heading">NO. OF PHOTOS</h4>
-                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                    <h4 class="list-group-item-text"><%= my_baby.photos.count %></h4>
                 </div>
             </div>
             <div class="list-group-separator"></div>
@@ -54,11 +52,12 @@
                 <div class="row-content">
                     <div class="action-secondary"><i class="mdi-material-info"></i></div>
                     <h4 class="list-group-item-heading">NO. OF LETTERS</h4>
-                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                    <h4 class="list-group-item-text"><%= my_baby.letters.count %></h4>
                 </div>
-            </div>
+            </div><i class="mdi-material-info">
             <div class="list-group-separator"></div>
         </div>
+          <p><%= link_to 'Edit', edit_baby_path(my_baby) %> | <%= link_to 'Abandon', my_baby, method: :delete, data: { confirm: 'Are you sure?'} %></p>
       </div>
     </div>
   </div>
