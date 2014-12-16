@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require bootstrap-datepicker
 //= require_tree .
 
 $(document).ready(function() {
@@ -21,4 +22,9 @@ $(document).ready(function() {
   $.material.input();
   $.material.checkbox();
   $.material.radio();
+});
+
+$(document).ready(function(){
+  $('input[type=file]').bootstrapFileInput();
+  $('.file-inputs').bootstrapFileInput();
 });

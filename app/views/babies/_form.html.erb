@@ -12,65 +12,56 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <label for="uploadAvatar" class="col-xs-3 control-label">Avatar:</label>
-    <div class="col-xs-9">
+  <div class="form-group" id="baby_form">
+    <div class="col-xs-12 col-xs-offset-3">
       <%= image_tag(@baby.avatar_url) if @baby.avatar? %>
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
     </div>
-
-    <div class="col-xs-9">
-      <div class="checkbox">
-        <label>
-      <%= f.check_box :remove_avatar, :class => "checkbox" %> Remove Avatar
-        </label>
-    </div>
   </div>
 
-  <div class="form-group">
-    <label for="inputName" class="col-xs-3 control-label">Name:</label>
-    <div class="col-xs-9">
+  <div class="form-group" id="baby_form">
+    <label for="inputName" class="col-xs-3 col-xs-offset-1 control-label">Name:</label>
+    <div class="col-xs-7">
     <%= f.text_field :name, :class =>"form-control"%>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="inputBirthday" class="col-xs-3 control-label">Birthday:</label>
-    <div class="col-xs-9">
-    <%= f.date_select :birthday, :class => "control-label", :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year'} %>
+  <div class="form-group" id="baby_form">
+    <label for="inputBirthday" class="col-xs-3 col-xs-offset-1 control-label">Birthday:</label>
+    <div class="col-xs-7">
+    <%= f.text_field :birthday, :class =>"datepicker form-control", :placeholder => "Select Date"%>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="inputLength" class="col-xs-3 control-label">Length (cm):</label>
-    <div class="col-xs-9">
+  <div class="form-group" id="baby_form">
+    <label for="inputLength" class="col-xs-3 col-xs-offset-1 control-label">Length (cm):</label>
+    <div class="col-xs-7">
     <%= f.number_field :length, :class =>"form-control"%>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="inputWeight" class="col-xs-3 control-label">Weight (kg):</label>
-    <div class="col-xs-9">
+  <div class="form-group" id="baby_form">
+    <label for="inputWeight" class="col-xs-3 col-xs-offset-1 control-label">Weight (kg):</label>
+    <div class="col-xs-7">
     <%= f.number_field :weight, :class =>"form-control"%>
     </div>
   </div>
 
-
-  <div class="form-group">
-    <label class="col-xs-3 control-label">It's':</label>
-    <div class="col-xs-9">
-      <div class="radio radio-primary">
+  <div class="form-group" id="baby_form">
+    <label class="col-xs-3 col-xs-offset-1 control-label">It's':</label>
+    <div class="col-xs-7">
+      <div class="radio radio-primary" id="gender_select">
         <label>
     <%= radio_button :baby, :gender, :boy, :class => "radio radio-primary"%>Boy
         </label>
       </div>
-      <div class="radio radio-primary">
+      <div class="radio radio-primary" id="gender_select">
         <label>
     <%= radio_button :baby, :gender, :girl, :class => "radio radio-primary" %>Girl
         </label>
       </div>
-      <div class="radio radio-primary">
+      <div class="radio radio-primary" id="gender_select">
         <label>
     <%= radio_button :baby, :gender, :surprise, :class => "radio radio-primary" %>Surprise!
         </label>
@@ -78,9 +69,9 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <div class="col-xs-9 col-lg-offset-4">
-    <%= f.submit "HOORAY", :class=>"btn btn-primary"%>
-    </div>
+  <div class="form-group" id="baby_form">
+    <div class="col-xs-6 col-md-4"></div>
+    <div class="col-xs-6 col-md-4"><%= f.submit "HOORAY!", :class=>"btn btn-primary btn-lg"%></div>
+    <div class="col-xs-6 col-md-4"></div>
   </div>
 <% end %>

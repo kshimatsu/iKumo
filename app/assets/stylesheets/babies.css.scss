@@ -6,21 +6,23 @@
   border-radius: 50%;
   height: 200px;
 }
-label{
-text-align: left;
-
-}
-.well {
-  width: 500px;
-  height: 600px;
-}
-
-div#radio.radio-primary{
-  text-align: left;
-}
 
 h1 {
   text-align: center;
+}
+
+#baby_form{
+  padding: 0px 0px 3px 0px;
+  font-size: 13px;
+  text-align: left;
+}
+.btn-warning.btn-flat:not(.btn-link) {
+  padding: 0px 0px 0px 0px;
+
+}
+#gender_select{
+  margin-bottom: 0px;
+  text-align: left;
 }
 
 .baby-container {
@@ -29,4 +31,19 @@ h1 {
   border-color: grey;
   padding: 10px 10px 10px 10px;
   margin: 20px 10px;
+}
+
+#announcementHead{
+  font-size: 30px;
+  text-align: center;
+}
+
+#announcementBody{
+  font-size: 16px;
+  text-align: center;
+}
+
+#new_baby_headline{
+  margin-bottom: 20px;
+  font-size: 24px;
 }
