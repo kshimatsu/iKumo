@@ -48,32 +48,35 @@
 
   <div class="row">
     <div class="col-md-12">
-    <% @baby.photos.each do |image| %>
+    <% @timeline_media.sort {|a,b| b.created_at <=> a.created_at}.each do |media| %>
 
-        <%= image_tag image.image_url(:thumb).to_s, {:class => "well"} %>
+        <% if media.is_a? Photo %>
+
+          <%= image_tag media.image_url(:thumb).to_s, {:class => "well"} %>
+
+        <% else %>
+
+          <div class="well letter col-xs-12 col-md-8 col-md-offset-2">
+            <button class="letter-buttons" type="letter-buttons">
+              <%= link_to 'Edit', edit_letter_path(media) %>
+            </button>
+
+            <button class="letter-buttons" type="letter-buttons">
+              <%= link_to 'Destroy', media, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </button>
+
+            <h3><%= media.title %></h3>
+
+            <p><%= media.content %></p>
+            <p><%= media.created_at %></p>
+          </div>
+
+        <% end %>
 
     <% end %>
     </div>
   </div>
 
-  <div class="row">
-    <% @letters.order('created_at DESC').each do |letter| %>
-      <div class="well letter col-xs-12 col-md-8 col-md-offset-2">
-
-
-      <button class="letter-buttons" type="letter-buttons">
-        <%= link_to 'Edit', edit_letter_path(letter) %></button>
-
-        <button class="letter-buttons" type="letter-buttons">
-        <%= link_to 'Destroy', letter, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-
-        <h3><%= letter.title %></h3>
-
-        <p><%= letter.content %></p>
-        <p><%= letter.created_at %></p>
-      </div>
-    <% end %>
-  </div>
 
   <div class="row">
     <div class="birth-announcement col-xs-12 col-md-8 col-md-offset-2">
