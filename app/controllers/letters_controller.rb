@@ -1,6 +1,5 @@
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update, :destroy]
-
   respond_to :html
 
   def index
@@ -24,7 +23,7 @@ class LettersController < ApplicationController
   def create
     @letter = Letter.new(letter_params)
     @letter.save
-    redirect_to root_path
+    redirect_to timeline_baby_path(@letter.baby_id)
   end
 
   def update
