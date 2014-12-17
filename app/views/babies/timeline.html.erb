@@ -16,6 +16,32 @@
           </div>
 
 
+          <div class="list-group baby-info-container col-xs-12 col-md-8" id="photo_count">
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-image-photo"></i>
+                </div>
+                <div class="row-content">
+                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                    <h4 class="list-group-item-heading">NO. OF PHOTOS</h4>
+                    <h4 class="list-group-item-text"><%= @baby.photos.count %></h4>
+                </div>
+            </div>
+
+            <div class="list-group-separator"></div>
+
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-maps-local-post-office"></i>
+                </div>
+                <div class="row-content">
+                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                    <h4 class="list-group-item-heading">NO. OF LETTERS</h4>
+                    <h4 class="list-group-item-text"><%= @baby.letters.count %></h4>
+                </div>
+            </div>
+          </div>
+
 
           <!-- End Avatar and Title -->
 
@@ -28,6 +54,7 @@
             <%= form_for @photo do |f| %>
               <%= f.file_field :image %>
               <input id="photo_baby_id" name="photo[baby_id]" type="hidden" value="<%= @photo.baby_id %>">
+              <%= f.submit "Upload", :class => "btn btn-primary btn-raised letter-submission" %>
             <% end %>
           </div>
       <!-- End image uploader -->
