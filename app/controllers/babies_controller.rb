@@ -7,11 +7,19 @@ class BabiesController < ApplicationController
   end
 
   def timeline
+
     @letters = @baby.letters
-    @letter = Letter.new
     @photos = @baby.photos
+
+    @timeline_media = @letters.to_a
+    @baby.photos.to_a.each { |photo| @timeline_media << photo }
+    @timeline_media.sort! { |a,b| b.created_at <=> a.created_at }
+
+    @letter = Letter.new
     @photo = Photo.new
+
     @photo.baby = @baby
+
     respond_with(@baby)
   end
 
