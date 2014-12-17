@@ -60,32 +60,7 @@
       <!-- End image uploader -->
 
 
-      <!-- Letter Form -->
-          <div class="letter-pad col-md-6">
-            <div class="letter-box col-md-12">
-              <%= form_for @letter, :class => "form-horizontal" do |f| %>
-
-                <div class="form-group" id="letter-date">
-                  <%= f.text_field :date, :class =>"datepicker form-control", :placeholder => Time.now.strftime("%B %e, %Y") %>
-                </div>
-
-                <div class="form-group">
-                <%= f.text_field :title, :class => "form-control", :placeholder => "Title" %>
-                </div>
-
-                <div class="form-group" id="letter-contents">
-                  <%= f.text_area :content, :class => "form-control", :placeholder => "Say something"  %>
-                </div>
-
-                <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
-                <div>
-                  <%= f.submit "Save Letter", :class => "btn btn-primary btn-raised" %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <!-- End Letter form -->
+        <%= render partial: 'letters/form' %>
 
         <li class="time-label">
           <span class="bg-light-blue"> Year <%= Time.now.year %>
@@ -93,42 +68,47 @@
         </li>
 
 
-        <% @timeline_media.each do |media| %>
-          <% if media.is_a? Photo %>
+        <% @timeline_media.each do |date, mediaArray| %>
 
-              <li>
-                <i class="fa fa-camera bg-purple"></i>
-                <div class="timeline-item images-container">
+          <h1><%= date %></h1>
+
+          <% mediaArray.each do |media| %>
+            <% if media.is_a? Photo %>
+
+                <li>
+                  <i class="fa fa-camera bg-purple"></i>
+                  <div class="timeline-item images-container">
+                      <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at.strftime("%B %e, %Y") %></span>
+                      <div class="timeline-body">
+                        <%= image_tag media.image_url(:thumb).to_s, {:class => "well margin"} %>
+                      </div>
+                  </div>
+                </li>
+
+            <% else %>
+
+                <li>
+                  <i class="fa fa-envelope bg-blue"></i>
+                  <div class="timeline-item letter-preview">
+
                     <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at.strftime("%B %e, %Y") %></span>
+                    <h3 class="timeline-header"><a href="#"><%= media.title %></a></h3>
                     <div class="timeline-body">
-                      <%= image_tag media.image_url(:thumb).to_s, {:class => "well margin"} %>
+                        <%= media.content %>
                     </div>
-                </div>
-              </li>
+                    <div class='timeline-footer'>
+                      <button class="letter-buttons glyphicon glyphicon-pencil" type="letter-buttons">
+                      <%= link_to '', edit_letter_path(media) %>
+                      </button>
 
-          <% else %>
-
-              <li>
-                <i class="fa fa-envelope bg-blue"></i>
-                <div class="timeline-item letter-preview">
-
-                  <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at.strftime("%B %e, %Y") %></span>
-                  <h3 class="timeline-header"><a href="#"><%= media.title %></a></h3>
-                  <div class="timeline-body">
-                      <%= media.content %>
+                      <button class="letter-buttons glyphicon glyphicon-trash" type="letter-buttons">
+                      <%= link_to '', media, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </button>
+                    </div>
                   </div>
-                  <div class='timeline-footer'>
-                    <button class="letter-buttons glyphicon glyphicon-pencil" type="letter-buttons">
-                    <%= link_to '', edit_letter_path(media) %>
-                    </button>
+                </li>
 
-                    <button class="letter-buttons glyphicon glyphicon-trash" type="letter-buttons">
-                    <%= link_to '', media, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </button>
-                  </div>
-                </div>
-              </li>
-
+            <% end %>
           <% end %>
         <% end %>
 
