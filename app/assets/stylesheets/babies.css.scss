@@ -23,30 +23,28 @@ h1 {
   margin: 20px 10px;
 }
 
-.letter {
-  border: solid 2px;
-  border-color: grey;
+.letter-box.form-group {
+  margin: 100px 30px 100px 50px;
 }
 
-.letter-buttons {
-  float: right
+#letter-content {
+  height: 150px;
 }
 
-.image {
-  padding: 2px;
+#letter_content {
+  height: 150px;
 }
 
-button.letter-buttons {
-  display: none; /* Hide button */
+#letter-date {
+  float: right;
 }
 
-.divbutton:hover button {
-   display: block; /* On :hover of div show button */
+.letter-pad {
+  background-image: url('NoteBookPaper.png');
+  background-repeat: no-repeat;
+  height: 400px;
+  padding: 70px 90px 70px 70px;
 }
-
-
-
-
 
 
 /*====================================

@@ -9,7 +9,7 @@
               </span>
               <br />
               <!-- Capsule Avatar and Title -->
-              <div class="timeline-avatar col-xs-12 col-md-4 col-md-offset-4">
+              <div class="timeline-avatar col-xs-12 col-md-4">
                 <%= image_tag @baby.avatar_url.to_s, {:class => "avatar center-block img-responsive"} %>
               </div>
               <!-- End Avatar and Title -->
@@ -17,41 +17,39 @@
             </li>
           <!-- Image Uploader -->
             <div class="row">
-              <form role="form">
-                <div class="form-group well col-xs-12 col-md-8 col-md-offset-2">
+                <div class="form-group well col-xs-12 col-md-8">
                   <%= form_for @photo do |f| %>
                     <%= f.file_field :image %>
                     <input id="photo_baby_id" name="photo[baby_id]" type="hidden" value="<%= @photo.baby_id %>">
-
-                    <i class="mdi-editor-insert-photo"><%= f.submit 'Upload a Memory' %></i>
-
                   <% end %>
                 </div>
-              </form>
             <!-- End image uploader -->
             </div>
 
             <div class="row">
             <!-- Letter Form -->
-            <form role="form">
-              <div class="well col-xs-12 col-md-6 col-md-offset-3">
-                <%= form_for @letter do |f| %>
-                  <%= f.label :title %><br>
-                  <%= f.text_field :title %>
-                  <span class="">
-                    <%= f.date_select :date %>
-                  </span>
-                  <div class="form-control">
-                    <%= f.label :content %><br>
-                    <%= f.text_area :content %>
+                <div class="letter-pad col-md-9">
+                  <div class="letter-box col-md-12">
+                    <%= form_for @letter, :class => "form-horizontal" do |f| %>
+                      <div id="letter-date">
+                        <%= f.date_select :date %>
+                      </div>
+
+                      <div class="form-group">
+                      <%= f.text_field :title, :class => "form-control", :placeholder => "Title" %>
+                      </div>
+
+                      <div class="form-group" id="letter-contents">
+                        <%= f.text_area :content, :class => "form-control", :placeholder => "Say something"  %>
+                      </div>
+
+                      <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
+                      <div class="form-group">
+                        <%= f.submit %>
+                      </div>
+                    <% end %>
                   </div>
-                  <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
-                  <div class="submit">
-                    <%= f.submit %>
-                  </div>
-                <% end %>
-              </div>
-              </form>
+                </div>
             </div>
             <!-- End Letter form -->
 

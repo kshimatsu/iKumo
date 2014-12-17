@@ -17,3 +17,7 @@
 *:focus {
   color: initial;
 }
+
+body {
+  background-color: rgba(253,250,245, 0.3)
+}
