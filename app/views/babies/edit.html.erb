@@ -1,3 +1,40 @@
-<%= render 'form' %>
+<div class="row">
+  <div class="form col-xs-8 col-xs-offset-2">
+    <div class="well">
 
-<%= link_to 'Back to Timeline', timeline_baby_path%>
+    <h1 id="new_baby_headline">Edit Baby Announcement</h1>
+
+
+    <div class="modal fade" id="babyModal" tabindex="-1" role="dialog" aria-labelledby="babyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title" id="announceHead">Welcome Back!</h2>
+          </div>
+          <div class="modal-body" id="announcementBody">
+            <p>Please take a moment to edit your baby's birth accouncement.  Don't worry, if there's anything unconfirmed, you can always come back and edit this.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">GOT IT!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'form' %></div>
+    </div>
+  </div>
+</div>
+
+<% content_for :js_after do %>
+  <script>
+    $(document).ready(function() {
+      $("#babyModal").modal();
+      $('.datepicker').datepicker();
+    });
+  </script>
+
+<% end %>
+
+<%= link_to 'Back to Timeline', timeline_baby_path %>

@@ -5,22 +5,53 @@
 .avatar {
   border-radius: 50%;
   height: 200px;
+  border: 2px solid;
+  border-color: rgba(217,214,209, 1);
 }
 
-.form {
-  text-align: center;
+#baby_form{
+  padding: 0px 0px 3px 0px;
+  font-size: 13px;
+  text-align: left;
 }
+.btn-warning.btn-flat:not(.btn-link) {
+  padding: 0px 0px 0px 0px;
+
+}
+#gender_select{
+  margin-bottom: 0px;
+  text-align: left;
 
 h1 {
   text-align: center;
+  font-family: "sans-serif"
 }
 
 .baby-container {
   text-align: center;
-  border: 2px solid;
   border-color: grey;
+  font-family: "helvetica";
   padding: 10px 10px 10px 10px;
   margin: 20px 10px;
+
+  #baby_card {
+    background-color: rgba(243,248,243,1);
+
+  }
+
+  #photo_count {
+    margin: 10px 0px 5px 0px;
+  }
+}
+
+#new_baby_headline{
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.baby_info {
+  text-align: left;
+  margin-left: 10px;
 }
 
 .letter {
@@ -43,10 +74,6 @@ button.letter-buttons {
 .divbutton:hover button {
    display: block; /* On :hover of div show button */
 }
-
-
-
-
 
 
 /*====================================
