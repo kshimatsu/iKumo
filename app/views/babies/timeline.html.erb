@@ -5,11 +5,6 @@
 
         <li class="time-label">
           <div class="row">
-            <div class="col-md-12">
-              <p id="notice"><%= notice %></p>
-            </div>
-          </div>
-          <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <h1 id="baby-name-title"><%= @baby.name %>'s Capsule</h1>
             </div>
@@ -18,8 +13,8 @@
           <br />
 
           <!-- Capsule Avatar and Title -->
-          <div class="timeline-avatar col-xs-12 col-md-4">
-            <%= image_tag @baby.avatar_url.to_s, {:class => "avatar center-block img-responsive"} %>
+          <div class="col-xs-12 col-md-4">
+            <%= image_tag @baby.avatar_url.to_s, {:class => "timeline-avatar center-block img-responsive"} %>
           </div>
 
 
@@ -124,14 +119,17 @@
                       <%= media.content %>
                   </div>
                   <div class='timeline-footer'>
-                    <button class="letter-buttons glyphicon glyphicon-pencil" type="letter-buttons">
 
-                    <%= link_to '', edit_letter_path(media) %>
-                    </button>
 
-                    <button class="letter-buttons glyphicon glyphicon-trash" type="letter-buttons">
-                    <%= link_to '', media, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </button>
+                    <%= link_to edit_letter_path(media) do %>
+                      <button class="letter-buttons glyphicon glyphicon-pencil" type="letter-buttons">
+                      </button>
+                    <% end %>
+
+                    <%= link_to media, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <button class="letter-buttons glyphicon glyphicon-trash" type="letter-buttons">
+                      </button>
+                    <% end %>
                   </div>
                 </div>
               </li>

@@ -2,9 +2,11 @@
 <div class="profile-container col-xs-12 col-sm-6">
   <div class="baby-container">
     <div class="well" id="baby_card">
-    <%= link_to timeline_baby_path(my_baby) do %>
-      <%= image_tag my_baby.avatar_url, {:class => "avatar"} %>
-    <% end %>
+      <div class="avatar-box">
+      <%= link_to timeline_baby_path(my_baby) do %>
+        <%= image_tag my_baby.avatar_url, {:class => "avatar"} %>
+      <% end %>
+      </div>
 
       <div class="profile-details-container">
           <h2><%= my_baby.name %></h2>
