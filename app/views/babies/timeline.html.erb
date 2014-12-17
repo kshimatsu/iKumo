@@ -1,13 +1,20 @@
 <div class="container" >
   <div class="row ">
-    <div class="col-xs-12 top-margin" >
+
       <ul class="timeline">
 
         <li class="time-label">
-          <p id="notice"><%= notice %></p>
-          <span class="bg-orange">
-          <h1><%= @baby.name %>'s Capsule</h1>
-          </span>
+          <div class="row">
+            <div class="col-md-12">
+              <p id="notice"><%= notice %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h1 id="baby-name-title"><%= @baby.name %>'s Capsule</h1>
+            </div>
+          </div>
+
           <br />
 
           <!-- Capsule Avatar and Title -->
@@ -88,8 +95,7 @@
         <!-- End Letter form -->
 
         <li class="time-label">
-          <span class="bg-light-blue"> Year <%= Time.now.year %>
-          </span>
+          <h2>Year <%= Time.now.year %></h2>
         </li>
 
 
@@ -119,7 +125,7 @@
                   </div>
                   <div class='timeline-footer'>
                     <button class="letter-buttons glyphicon glyphicon-pencil" type="letter-buttons">
-                    <%= link_to '', edit_letter_path(media) %>
+                    <%= link_to '', :class => "letter-buttons glyphicon glyphicon-pencil", edit_letter_path(media) %>
                     </button>
 
                     <button class="letter-buttons glyphicon glyphicon-trash" type="letter-buttons">
@@ -132,38 +138,25 @@
           <% end %>
         <% end %>
 
-        <div class="row">
-          <div class="birth-announcement col-xs-12">
-            <p>
-              <strong>Name:</strong>
-              <%= @baby.name %>
-            </p>
+        <li>
+          <i class="fa fa-envelope bg-blue"></i>
+          <div class="timeline-item images-container">
 
-            <p>
-              <strong>Birthday:</strong>
-              <%= @baby.birthday %>
-            </p>
-
-            <p>
-              <strong>Length:</strong>
-              <%= @baby.length %>
-            </p>
-
-            <p>
-              <strong>Weight:</strong>
-              <%= @baby.weight %>
-            </p>
-
-            <p>
-              <strong>Gender:</strong>
-              <%= @baby.gender %>
-            </p>
-            <%= link_to 'Edit', edit_baby_path(@baby) %>
+            <span class="time"><i class="fa fa-clock-o"></i><%= @baby.created_at.strftime("%B %e, %Y") %></span>
+            <h3 class="timeline-header"><a href="#">Welcome!</a></h3>
+            <div class="timeline-body">
+                <%= @baby.name %> was born on <%= @baby.birthday.strftime("%B %e, %Y")%> at <%= @baby.weight %>kg and <%= @baby.length %>cm.
+            </div>
+            <div class='timeline-footer'>
+              <button class="edit-baby-button" type="letter-buttons">
+              <%= link_to 'Click here to Edit Baby\'s Info', edit_baby_path(@baby) %>
+              </button>
+            </div>
           </div>
-        </div>
+        </li>
 
       </ul>
-    </div>
+
   </div>
 </div>
 
