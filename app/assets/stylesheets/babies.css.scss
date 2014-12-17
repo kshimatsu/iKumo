@@ -55,6 +55,10 @@ h1 {
   margin-left: 10px;
 }
 
+.datepicker {
+  max-width: 40%;
+}
+
 .letter-box.form-group {
   margin: 100px 30px 100px 50px;
 }
@@ -67,15 +71,23 @@ h1 {
   height: 150px;
 }
 
-#letter-date {
-  float: right;
-}
-
 .letter-pad {
   background-image: url('NoteBookPaper.png');
   background-repeat: no-repeat;
   height: 400px;
   padding: 70px 90px 70px 70px;
+}
+
+.polaroid {
+  background-image: url('polaroid.png');
+  background-repeat: no-repeat;
+  height: 300px;
+  padding-top: 100px;
+  margin-top: 80px;
+
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
 }
 
 
