@@ -24,7 +24,7 @@ $.fn.bootstrapFileInput = function() {
     }
 
     // Set the word to be displayed on the button
-    var buttonWord = 'Choose File..';
+    var buttonWord = 'Add Photo';
 
     if (typeof $elem.attr('title') != 'undefined') {
       buttonWord = $elem.attr('title');
