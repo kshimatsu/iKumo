@@ -22,7 +22,13 @@
         <%= yield %>
       </div>
     </div>
-</div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div><a href="#" class="scrollToTop"></a></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Latest compiled and minified JavaScript -->
   <%= javascript_include_tag 'application' %>
@@ -31,5 +37,7 @@
   <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js" %>
 
   <%= yield :js_after %>
+
+
 </body>
 </html>

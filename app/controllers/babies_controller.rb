@@ -25,7 +25,7 @@ class BabiesController < ApplicationController
 
   def show
     @letters = @baby.letters
-    respond_with(@baby)
+    redirect_to timeline_baby_path(@baby)
   end
 
   def new

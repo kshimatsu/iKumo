@@ -16,15 +16,18 @@
 }
 .btn-warning.btn-flat:not(.btn-link) {
   padding: 0px 0px 0px 0px;
-
 }
+
+.family_headline {
+  text-align: center;
+  font: helvetica;
+  font-weight: 400px;
+  color: rgba(0,149,135,1);
+}
+
 #gender_select{
   margin-bottom: 0px;
   text-align: left;
-
-h1 {
-  text-align: center;
-  font-family: "sans-serif"
 }
 
 .baby-container {
@@ -94,12 +97,8 @@ body {
     font-size:14px;
 }
 
-.nav a {
-    color:#ffffff !important;
-}
 .navbar-header a {
     color:#ffffff !important;
-    padding-right:100px;
 }
 
 .text-center {
@@ -117,10 +116,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family:'Open Sans', sans-serif;
 }
 h1 {
-
-    font-weight:700;
+    text-align: center;
+    font-weight:350;
     font-size:50px;
-    color:#1fa51f; /* green color code */
+    color: rgba(0,149,135,1); /* green color code */
 }
 
 p {
