@@ -1,139 +1,173 @@
 <div class="container" >
-    <div class="row ">
-      <div class="col-md-offset-2 col-md-8 col-sm-12 top-margin" >
-        <ul class="timeline">
-            <li class="time-label">
+  <div class="row ">
+
+      <ul class="timeline">
+
+        <li class="time-label">
+          <div class="row">
+            <div class="col-md-12">
               <p id="notice"><%= notice %></p>
-              <span class="bg-orange">
-              <h1><%= @baby.name %>'s Capsule</h1>
-              </span>
-              <br />
-              <!-- Capsule Avatar and Title -->
-              <div class="timeline-avatar col-xs-12 col-md-4 col-md-offset-4">
-                <%= image_tag @baby.avatar_url.to_s, {:class => "avatar center-block img-responsive"} %>
-              </div>
-              <!-- End Avatar and Title -->
-              <br />
-            </li>
-          <!-- Image Uploader -->
-            <div class="row">
-              <form role="form">
-                <div class="form-group well col-xs-12 col-md-8 col-md-offset-2">
-                  <%= form_for @photo do |f| %>
-                    <%= f.file_field :image %>
-                    <input id="photo_baby_id" name="photo[baby_id]" type="hidden" value="<%= @photo.baby_id %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h1 id="baby-name-title"><%= @baby.name %>'s Capsule</h1>
+            </div>
+          </div>
 
-                    <i class="mdi-editor-insert-photo"><%= f.submit 'Upload a Memory' %></i>
+          <br />
 
-                  <% end %>
+          <!-- Capsule Avatar and Title -->
+          <div class="timeline-avatar col-xs-12 col-md-4">
+            <%= image_tag @baby.avatar_url.to_s, {:class => "avatar center-block img-responsive"} %>
+          </div>
+
+
+          <div class="list-group baby-info-container col-xs-12 col-md-8" id="photo_count">
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-image-photo"></i>
                 </div>
-              </form>
-            <!-- End image uploader -->
+                <div class="row-content">
+                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                    <h4 class="list-group-item-heading">NO. OF PHOTOS</h4>
+                    <h4 class="list-group-item-text"><%= @baby.photos.count %></h4>
+                </div>
             </div>
 
-            <div class="row">
-            <!-- Letter Form -->
-            <form role="form">
-              <div class="well col-xs-12 col-md-6 col-md-offset-3">
-                <%= form_for @letter do |f| %>
-                  <%= f.label :title %><br>
-                  <%= f.text_field :title %>
-                  <span class="">
-                    <%= f.date_select :date %>
-                  </span>
-                  <div class="form-control">
-                    <%= f.label :content %><br>
-                    <%= f.text_area :content %>
-                  </div>
-                  <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
-                  <div class="submit">
-                    <%= f.submit %>
-                  </div>
-                <% end %>
-              </div>
-              </form>
+            <div class="list-group-separator"></div>
+
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-maps-local-post-office"></i>
+                </div>
+                <div class="row-content">
+                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                    <h4 class="list-group-item-heading">NO. OF LETTERS</h4>
+                    <h4 class="list-group-item-text"><%= @baby.letters.count %></h4>
+                </div>
             </div>
-            <!-- End Letter form -->
+          </div>
 
-            <li class="time-label">
-                <span class="bg-light-blue"> Year <%= Time.now.year %>
-                </span>
-            </li>
 
-            <% @timeline_media.each do |media| %>
+          <!-- End Avatar and Title -->
 
-              <% if media.is_a? Photo %>
-                <li>
-                  <i class="fa fa-camera bg-purple"></i>
-                  <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at %></span>
-                      <div class="timeline-body">
-                        <%= image_tag media.image_url(:thumb).to_s, {:class => "well margin"} %>
-                      </div>
-                  </div>
-                </li>
+          <br />
+        </li>
 
-              <% else %>
-
-                <li>
-                  <i class="fa fa-envelope bg-blue"></i>
-                  <div class="timeline-item well">
-                    <button class="letter-buttons" type="letter-buttons">
-                      <%= link_to 'Edit', edit_letter_path(media) %>
-                    </button>
-
-                    <button class="letter-buttons" type="letter-buttons">
-                      <%= link_to 'Destroy', media, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </button>
-
-                    <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at %></span>
-                    <h3 class="timeline-header"><a href="#"><%= media.title %></a></h3>
-                    <div class="timeline-body">
-                        <%= media.content %>
-                    </div>
-                    <div class='timeline-footer'>
-                        <a class="btn btn-primary btn-xs">Share</a>
-                        <a class="btn btn-danger btn-xs">Read More</a>
-                    </div>
-                  </div>
-                </li>
-
-              <% end %>
-
+      <!-- Image Uploader -->
+        <div class="row">
+          <div class="polaroid form-group col-xs-12 col-sm-2 col-md-offset-1">
+            <%= form_for @photo do |f| %>
+              <%= f.file_field :image %>
+              <input id="photo_baby_id" name="photo[baby_id]" type="hidden" value="<%= @photo.baby_id %>">
+              <%= f.submit "Upload", :class => "btn btn-primary btn-raised letter-submission" %>
             <% end %>
-            <div class="row">
-              <div class="birth-announcement col-xs-12">
-                <p>
-                  <strong>Name:</strong>
-                  <%= @baby.name %>
-                </p>
+          </div>
+      <!-- End image uploader -->
 
-                <p>
-                  <strong>Birthday:</strong>
-                  <%= @baby.birthday %>
-                </p>
 
-                <p>
-                  <strong>Length:</strong>
-                  <%= @baby.length %>
-                </p>
+      <!-- Letter Form -->
+          <div class="letter-pad col-md-6">
+            <div class="letter-box col-md-12">
+              <%= form_for @letter, :class => "form-horizontal" do |f| %>
 
-                <p>
-                  <strong>Weight:</strong>
-                  <%= @baby.weight %>
-                </p>
+                <div class="form-group" id="letter-date">
+                  <%= f.text_field :date, :class =>"datepicker form-control", :placeholder => Time.now.strftime("%B %e, %Y") %>
+                </div>
 
-                <p>
-                  <strong>Gender:</strong>
-                  <%= @baby.gender %>
-                </p>
-                <%= link_to 'Edit', edit_baby_path(@baby) %>
-              </div>
+                <div class="form-group">
+                <%= f.text_field :title, :class => "form-control", :placeholder => "Title" %>
+                </div>
+
+                <div class="form-group" id="letter-contents">
+                  <%= f.text_area :content, :class => "form-control", :placeholder => "Say something"  %>
+                </div>
+
+                <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
+                <div>
+                  <%= f.submit "Save Letter", :class => "btn btn-primary btn-raised" %>
+                </div>
+              <% end %>
             </div>
+          </div>
+        </div>
+        <!-- End Letter form -->
+
+        <li class="time-label">
+          <h2>Year <%= Time.now.year %></h2>
+        </li>
+
+
+        <% @timeline_media.each do |media| %>
+          <% if media.is_a? Photo %>
+
+              <li>
+                <i class="fa fa-camera bg-purple"></i>
+                <div class="timeline-item images-container">
+                    <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at.strftime("%B %e, %Y") %></span>
+                    <div class="timeline-body">
+                      <%= image_tag media.image_url(:thumb).to_s, {:class => "well margin"} %>
+                    </div>
+                </div>
+              </li>
+
+          <% else %>
+
+              <li>
+                <i class="fa fa-envelope bg-blue"></i>
+                <div class="timeline-item letter-preview">
+
+                  <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at.strftime("%B %e, %Y") %></span>
+                  <h3 class="timeline-header"><a href="#"><%= media.title %></a></h3>
+                  <div class="timeline-body">
+                      <%= media.content %>
+                  </div>
+                  <div class='timeline-footer'>
+                    <button class="letter-buttons glyphicon glyphicon-pencil" type="letter-buttons">
+
+                    <%= link_to '', edit_letter_path(media) %>
+                    </button>
+
+                    <button class="letter-buttons glyphicon glyphicon-trash" type="letter-buttons">
+                    <%= link_to '', media, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+          <% end %>
+        <% end %>
+
+        <li>
+          <i class="fa fa-envelope bg-blue"></i>
+          <div class="timeline-item images-container">
+
+            <span class="time"><i class="fa fa-clock-o"></i><%= @baby.created_at.strftime("%B %e, %Y") %></span>
+            <h3 class="timeline-header"><a href="#">Welcome!</a></h3>
+            <div class="timeline-body">
+                <%= @baby.name %> was born on <%= @baby.birthday.strftime("%B %e, %Y")%> at <%= @baby.weight %>kg and <%= @baby.length %>cm.
+            </div>
+            <div class='timeline-footer'>
+              <button class="edit-baby-button" type="letter-buttons">
+              <%= link_to 'Click here to Edit Baby\'s Info', edit_baby_path(@baby) %>
+              </button>
+            </div>
+          </div>
+        </li>
+
       </ul>
-    </div>
+
   </div>
 </div>
 
+<% content_for :js_after do %>
+  <script>
+    $(document).ready(function() {
 
+      $('.datepicker').datepicker();
+    });
+  </script>
+
+<% end %>
 

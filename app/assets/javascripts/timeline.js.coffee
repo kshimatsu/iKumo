@@ -1,9 +1,14 @@
 $(document).ready ->
-  $(document).on("mouseenter", ".letter", ->
-    $(this).find(":button").show()
+  $(".letter-buttons").hide()
+  $(document).on("mouseenter", ".letter-preview", ->
+
+    $(".letter-buttons").show()
+
     return
-  ).on "mouseleave", ".letter", ->
-    $(this).find(":button").hide()
+  ).on "mouseleave", ".letter-preview", ->
+
+    $(".letter-buttons").hide()
+
     return
 
   return

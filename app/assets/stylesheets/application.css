@@ -18,3 +18,21 @@
 *:focus {
   color: initial;
 }
+
+body {
+  background-color: rgba(253,250,245, 0.3)
+}
+
+@font-face { font-family: janda; src: url('JandaSafeandSound.ttf'); }
+
+h1 {
+  font-family: "janda";
+}
+
+h2 {
+  font-family: "janda";
+}
+
+h3 {
+  font-family: "janda";
+}

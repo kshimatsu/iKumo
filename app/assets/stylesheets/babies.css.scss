@@ -7,13 +7,21 @@
   height: 200px;
   border: 2px solid;
   border-color: rgba(217,214,209, 1);
+  float: right;
 }
 
-#baby_form{
+#baby_form {
   padding: 0px 0px 3px 0px;
   font-size: 13px;
   text-align: left;
 }
+
+#baby-name-title {
+  text-align: left;
+  font-family: "janda";
+  color: #00635a;
+}
+
 .btn-warning.btn-flat:not(.btn-link) {
   padding: 0px 0px 0px 0px;
 }
@@ -25,9 +33,15 @@
   color: rgba(0,149,135,1);
 }
 
-#gender_select{
+#gender_select {
   margin-bottom: 0px;
   text-align: left;
+}
+
+h1 {
+  text-align: center;
+  color: #00635a;
+  font-family: "janda";
 }
 
 .baby-container {
@@ -47,6 +61,10 @@
   }
 }
 
+.letter-submission {
+  margin: 10px 30px 10px 25px;
+
+}
 #new_baby_headline{
   margin-bottom: 20px;
   font-size: 24px;
@@ -57,27 +75,60 @@
   margin-left: 10px;
 }
 
-.letter {
-  border: solid 2px;
-  border-color: grey;
+.baby-info-container {
+  margin-top: 30px;
+  width: 30%;
+}
+
+#edit-baby-button {
+  text-align: right;
+}
+.file-input-name {
+  margin: 30px;
+}
+
+a.file-input-wrapper{
+  margin: 10px 0px 10px 10px;
+}
+
+.datepicker {
+  max-width: 40%;
+}
+
+.letter-box.form-group {
+  margin: 100px 30px 100px 50px;
 }
 
 .letter-buttons {
-  float: right
+  float: right;
 }
 
-.image {
-  padding: 2px;
+#letter-content {
+  height: 150px;
 }
 
-button.letter-buttons {
-  display: none; /* Hide button */
+#letter_content {
+  height: 150px;
 }
 
-.divbutton:hover button {
-   display: block; /* On :hover of div show button */
+.letter-pad {
+  background-image: url('NoteBookPaper.png');
+  background-repeat: no-repeat;
+  height: 400px;
+  padding: 70px 90px 70px 70px;
 }
 
+.polaroid {
+  background-image: url('polaroid.png');
+  background-repeat: no-repeat;
+  height: 300px;
+  padding-top: 60px;
+  margin-top: 50px;
+
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
+}
 
 /*====================================
  Free To Use For Personal And Commercial Usage
@@ -175,17 +226,35 @@ p {
 .timeline > li:after {
   clear: both;
 }
-.timeline > li > .timeline-item {
+.timeline > li > .images-container {
   margin-top: 10px;
   border: 0px solid #dfdfdf;
-  background: #fff;
+  background-repeat: no-repeat;
   color: #555;
   margin-left: 60px;
   margin-right: 15px;
   padding: 5px;
   position: relative;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 75%;
 }
+
+.timeline > li > .letter-preview {
+  margin-top: 10px;
+  border: 0px solid #dfdfdf;
+  background-image: url('letter-preview-background.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+  color: #555;
+  margin-left: 60px;
+  margin-right: 15px;
+  padding: 60px 50px 50px 40px;
+  position: relative;
+  // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 75%;
+}
+
 .timeline > li > .timeline-item > .time {
   color: #999;
   float: right;
@@ -206,6 +275,7 @@ p {
 .timeline > li > .timeline-item > .timeline-footer {
   padding: 10px;
 }
+
 .timeline > li.time-label > span {
   font-weight: 600;
   padding: 5px;
@@ -291,9 +361,7 @@ p {
 .bg-lime {
   background-color: #01ff70 !important;
 }
-.bg-orange {
-  background-color: #ff851b !important;
-}
+
 .bg-fuchsia {
   background-color: #f012be !important;
 }
