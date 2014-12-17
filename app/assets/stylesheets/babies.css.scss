@@ -67,7 +67,9 @@ a.file-input-wrapper{
   margin: 100px 30px 100px 50px;
 }
 
-
+.letter-buttons {
+  float: right;
+}
 
 #letter-content {
   height: 150px;
@@ -246,6 +248,7 @@ p {
 .timeline > li > .timeline-item > .timeline-footer {
   padding: 10px;
 }
+
 .timeline > li.time-label > span {
   font-weight: 600;
   padding: 5px;
