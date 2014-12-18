@@ -4,12 +4,12 @@
   <title>iKumo</title>
   <!-- Latest compiled and minified CSS -->
 
-    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" %>
-    <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"%>
-    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material-wfont.min.css"%>
-    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/material.min.css" %>
-    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/css/ripples.min.css" %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
+    <%= stylesheet_link_tag "font-awesome.min.css" %>
+    <%= stylesheet_link_tag "material-wfont.min.css"%>
+    <%= stylesheet_link_tag "material.min.css" %>
+    <%= stylesheet_link_tag "ripples.min.css" %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
 </head>
 <body ng-app="iKumo">
@@ -32,9 +32,9 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
-  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/material.min.js" %>
-  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.0/js/ripples.min.js" %>
+  <%= javascript_include_tag "bootstrap.min.js" %>
+  <%= javascript_include_tag "material.min.js" %>
+  <%= javascript_include_tag "ripples.min.js" %>
 
   <%= yield :js_after %>
 

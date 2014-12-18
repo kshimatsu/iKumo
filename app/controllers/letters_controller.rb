@@ -28,7 +28,7 @@ class LettersController < ApplicationController
 
   def update
     @letter.update(letter_params)
-    respond_with(@letter)
+    redirect_to timeline_baby_path(@letter.baby_id)
   end
 
   def destroy
