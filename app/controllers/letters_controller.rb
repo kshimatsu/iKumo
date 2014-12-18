@@ -14,10 +14,11 @@ class LettersController < ApplicationController
 
   def new
     @letter = Letter.new
-    respond_with(@letter)
+    redirect_to timeline_baby_path(@letter.baby_id)
   end
 
   def edit
+    @letter
   end
 
   def create
