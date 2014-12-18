@@ -91,7 +91,7 @@
           <h2>Year <%= Time.now.year %></h2>
         </li>
 
-        <% @timeline_media.each do |date, mediaArray| %>
+        <% @timeline_media.sort.reverse.each do |date, mediaArray| %>
 
           <% if mediaArray.count { |media| media.is_a? Photo } > 0 %>
             <li>
