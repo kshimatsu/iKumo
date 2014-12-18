@@ -1,7 +1,8 @@
 <h1>Editing letter</h1>
 
-<%= render 'form' %>
+<div class="edit-letter col-xs-12 col-xs-offset-3">
+  <%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @letter %> |
 <%= link_to 'Back to Timeline', timeline_baby_path(@letter.baby_id) %>
 

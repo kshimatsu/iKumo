@@ -1,3 +1,4 @@
+
   <div class="letter-pad col-md-6">
     <div class="letter-box col-md-12">
       <%= form_for @letter, :class => "form-horizontal" do |f| %>
@@ -14,11 +15,12 @@
           <%= f.text_area :content, :class => "form-control", :placeholder => "Say something"  %>
         </div>
 
-        <%= f.text_field :baby_id, :value => @baby.id, :hidden => true %>
+        <%= f.text_field :baby_id, :value => @letter.baby_id, :hidden => true %>
         <div>
           <%= f.submit "Save Letter", :class => "btn btn-primary btn-raised" %>
         </div>
       <% end %>
     </div>
+
   </div>
 </div>
