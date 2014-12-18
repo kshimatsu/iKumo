@@ -33,7 +33,7 @@ class LettersController < ApplicationController
 
   def destroy
     @letter.destroy
-    respond_with(@letter)
+    redirect_to timeline_baby_path(@letter.baby_id)
   end
 
   private

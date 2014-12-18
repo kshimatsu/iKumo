@@ -2,14 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .avatar {
   border-radius: 50%;
   height: 200px;
   border: 2px solid;
   border-color: rgba(217,214,209, 1);
-  float: right;
 }
 
+.timeline-avatar {
+  border-radius: 50%;
+  height: 200px;
+  border: 2px solid;
+  border-color: rgba(217,214,209, 1);
+  float: right
+}
 #baby_form {
   padding: 0px 0px 3px 0px;
   font-size: 13px;
@@ -20,6 +27,7 @@
   text-align: left;
   font-family: "janda";
   color: #00635a;
+  margin-top: 100px;
 }
 
 .btn-warning.btn-flat:not(.btn-link) {
