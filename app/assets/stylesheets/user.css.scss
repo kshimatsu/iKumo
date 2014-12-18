@@ -13,10 +13,22 @@ h2.userSetting {
 #mosaic
 {
   background-image: url('bottom.png');
+
 }
 
 #mosaic span.hover
 {
   float: left;
   background-image: url('top.png');
+}
+
+
+.registerContainer {
+  background-image: url('NoteBookPaper.png');
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.sign-in-container {
+  margin-top: 70px;
 }
