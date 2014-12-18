@@ -11,9 +11,9 @@ class BabiesController < ApplicationController
     @letters = @baby.letters
     @photos = @baby.photos
 
-    @timeline_media = @letters.to_a
-    @baby.photos.to_a.each { |photo| @timeline_media << photo }
-    @timeline_media.sort! { |a,b| b.created_at <=> a.created_at }
+    letters = @letters.order(:date).group_by(&:date)
+    photos  = @baby.photos.order(:date_taken).group_by(&:date_taken)
+    @timeline_media = letters.deeper_merge(photos)
 
     @letter = Letter.new
     @photo = Photo.new

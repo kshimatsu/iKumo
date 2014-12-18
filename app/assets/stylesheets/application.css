@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap-datepicker
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -36,3 +37,4 @@ h2 {
 h3 {
   font-family: "janda";
 }
+
