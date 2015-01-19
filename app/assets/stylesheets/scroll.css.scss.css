@@ -10,7 +10,7 @@
   bottom:20px;
   right:20px;
   display:none;
-  background-image: url('arrowup.png')
+  background-image: url(image-path('arrowup.png'))
 }
 .scrollToTop:hover{
   text-decoration:none;

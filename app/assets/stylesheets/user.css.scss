@@ -12,19 +12,19 @@ h2.userSetting {
 
 #mosaic
 {
-  background-image: url('bottom.png');
+  background-image: url(image-path('bottom.png'));
 
 }
 
 #mosaic span.hover
 {
   float: left;
-  background-image: url('top.png');
+  background-image: url(image-path('top.png'));
 }
 
 
 .registerContainer {
-  background-image: url('NoteBookPaper.png');
+  background-image: url(image-path('NoteBookPaper.png'));
   background-repeat: no-repeat;
   height: 600px;
 }

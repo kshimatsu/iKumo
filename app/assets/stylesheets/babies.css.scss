@@ -120,14 +120,14 @@ a.file-input-wrapper{
 }
 
 .letter-pad {
-  background-image: url('NoteBookPaper.png');
+  background-image: url(image-path('NoteBookPaper.png'));
   background-repeat: no-repeat;
   height: 400px;
   padding: 70px 90px 70px 70px;
 }
 
 .polaroid {
-  background-image: url('polaroid.png');
+  background-image: url(image-path('polaroid.png'));
   background-repeat: no-repeat;
   height: 300px;
   padding-top: 60px;
@@ -250,7 +250,7 @@ p {
 .timeline > li > .letter-preview {
   margin-top: 10px;
   border: 0px solid #dfdfdf;
-  background-image: url('letter-preview-background.png');
+  background-image: url(image-path('letter-preview-background.png'));
   background-size: 100%;
   background-repeat: no-repeat;
   height: 300px;
