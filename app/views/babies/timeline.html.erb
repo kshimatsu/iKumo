@@ -116,7 +116,7 @@
               <i class="fa fa-envelope bg-blue"></i>
               <div class="timeline-item letter-preview">
 
-                <span class="time"><i class="fa fa-clock-o"></i><%= media.created_at.strftime("%B %e, %Y") %></span>
+                <span class="time"><i class="fa fa-clock-o"></i><%= media.posted_on.strftime("%B %e, %Y") %></span>
                 <h3 class="timeline-header"><a href="#"><%= media.title %></a></h3>
                 <div class="timeline-body">
                     <%= media.content %>
