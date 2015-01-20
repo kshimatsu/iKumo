@@ -25,6 +25,8 @@ class LettersController < ApplicationController
     @letter = Letter.new(letter_params)
     if @letter.posted_on == nil
       @letter.posted_on = Date.current
+    else
+      @letter.posted_on = @letter.posted_on
     end
     @letter.save
     redirect_to timeline_baby_path(@letter.baby_id)
