@@ -7,6 +7,7 @@ gem 'rails', '4.1.6'
 gem 'pg'
 # Use SCSS for stylesheets
 #use devise for login
+
 gem 'devise'
 
 gem 'carrierwave'
@@ -65,6 +66,8 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara', '~> 2.3.0'
+  gem 'rails_12factor'
+
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
